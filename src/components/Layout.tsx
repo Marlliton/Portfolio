@@ -10,7 +10,7 @@ export function Layout(props: LayoutProps) {
   return (
     <div
       className={`
-      flex items-center h-full flex-col w-full px-5 md:px-28 gap-4
+      flex items-center h-full flex-col w-full px-5 md:px-4 lg:px-28 gap-4
   `}
     >
       

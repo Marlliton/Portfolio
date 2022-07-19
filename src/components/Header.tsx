@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+interface HeaderProps {
+  setBlur: boolean;
+}
+
 export function Header() {
   const [showModal, setShowModal] = useState(false);
 
@@ -14,12 +18,46 @@ export function Header() {
     hidden: { opacity: 0, x: 100 },
   };
 
+  const showItems = (mobile = false) => {
+    return (
+      <>
+        <motion.li
+          variants={item}
+          transition={{ duration: 1 }}
+          className={`
+                hover:bg-violet-900/20 py-2 px-4 rounded-lg cursor-pointer transition-colors ${mobile && 'text-2xl mb-4'}
+              `}
+        >
+          Quem sou eu
+        </motion.li>
+        <motion.li
+          variants={item}
+          transition={{ duration: 1 }}
+          className={`
+                hover:bg-violet-900/20 py-2 px-4 rounded-lg cursor-pointer transition-colors ${mobile && 'text-2xl mb-4'}
+              `}
+        >
+          Conhecimentos
+        </motion.li>
+        <motion.li
+          variants={item}
+          transition={{ duration: 1 }}
+          className={`
+                hover:bg-violet-900/20 py-2 px-4 rounded-lg cursor-pointer transition-colors ${mobile && 'text-2xl mb-4'}
+              `}
+        >
+          Projetos
+        </motion.li>
+      </>
+    );
+  };
+
   return (
     <motion.div
       initial="hidden"
       animate="visible"
       variants={list}
-      transition={{ duration: 0.5 }}
+      // transition={{ duration: 0.5 }}
       className={`
        border-b border-violet-900/30 w-full
     `}
@@ -41,7 +79,7 @@ export function Header() {
           <button
             onClick={() => setShowModal(prevValue => !prevValue)}
             className={`
-            relative  transition-all h-10 w-10
+            relative transition-all h-10 w-10 md:hidden z-10
           `}
           >
             <span
@@ -66,38 +104,22 @@ export function Header() {
             `}
             ></span>
           </button>
+          {showModal && (
+            <ul
+              className={`
+              md:hidden absolute top-0 left-0 w-screen h-screen flex flex-col 
+              justify-center items-center z-[8] bg-[#080713]/95
+            `}
+            >
+              {showItems(true)}
+            </ul>
+          )}
           <ul
             className={`
             hidden md:flex gap-3 items-center px-4
           `}
           >
-            <motion.li
-              variants={item}
-              transition={{ duration: 1 }}
-              className={`
-                hover:bg-violet-900/20 py-2 px-4 rounded-lg cursor-pointer transition-colors
-              `}
-            >
-              Quem sou eu
-            </motion.li>
-            <motion.li
-              variants={item}
-              transition={{ duration: 1 }}
-              className={`
-                hover:bg-violet-900/20 py-2 px-4 rounded-lg cursor-pointer transition-colors
-              `}
-            >
-              Conhecimentos
-            </motion.li>
-            <motion.li
-              variants={item}
-              transition={{ duration: 1 }}
-              className={`
-                hover:bg-violet-900/20 py-2 px-4 rounded-lg cursor-pointer transition-colors
-              `}
-            >
-              Projetos
-            </motion.li>
+            {showItems()}
           </ul>
         </div>
       </div>
