@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ButtonLink } from "./ButtonLink";
 import { TypeWriter } from "./Utils/TypeWriter";
+import { LottieDeveloper } from "./LottieDeveloper";
 
 export function Home() {
   const rootAnimation = {
@@ -14,9 +15,9 @@ export function Home() {
   return (
     <div className="h-full w-full flex items-center md:justify-between">
       <div className="flex items-center flex-1 flex-col">
-        <h1 className="text-2xl px-6 md:text-left md:w-full ">
+        <h1 className="text-2xl md:text-4xl md:">
           <TypeWriter text="Olá, eu sou" hideCursor delay={1200} /> <br />{" "}
-          <span className="text-4xl">
+          <span className="text-5xl">
             <TypeWriter text="Marlliton Souza" delay={2500} hideCursor />
           </span>{" "}
           <br />
@@ -49,10 +50,10 @@ export function Home() {
 
       <div
         className={`
-        hidden md:flex flex-1
+        hidden md:flex justify-center flex-1 pl-16
       `}
       >
-        alguma coisa aqui
+        <LottieDeveloper size={600} />
       </div>
     </div>
   );
