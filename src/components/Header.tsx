@@ -59,10 +59,10 @@ export function Header() {
       variants={list}
       // transition={{ duration: 0.5 }}
       className={`
-       border-b border-violet-900/30 w-full
+       border-b border-violet-900/30 w-full flex justify-center
     `}
     >
-      <div className="flex justify-between h-14 w-full px-4 lg:px-28 items-center">
+      <div className="flex justify-between h-14 w-full px-4 lg:max-w-7xl items-center">
         <div>
           <motion.h1
             animate={{ opacity: [0, 1], x: [-100, 0] }}
@@ -71,7 +71,7 @@ export function Header() {
               hover:bg-violet-900/20 py-2 px-4 rounded-lg transition-colors hover:scale-75
             `}
           >
-            Dev Marlliton
+            &lt;Marlliton Souza&bull;/&gt;
           </motion.h1>
         </div>
 

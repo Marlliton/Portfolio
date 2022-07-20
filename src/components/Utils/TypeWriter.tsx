@@ -27,14 +27,16 @@ export function TypeWriter(props: TypeWriterProps) {
   useEffect(() => {
     setTimeout(() => {
       typeWriter(props.text);
-    }, props.delay?? 1000);
+    }, props.delay ?? 1000);
   }, []);
 
   return (
     <>
       {text}{" "}
       {showCursor && (
-        <span className="animate-fade-in-down text-2xl font-extrabold">|</span>
+        <span className="animate-fade-in-down text-2xl md:text-4xl ml-1 font-extrabold">
+          |
+        </span>
       )}
     </>
   );

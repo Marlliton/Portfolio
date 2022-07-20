@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { Home } from "../components/Home";
-import { useState } from "react";
 
 const MainPage: NextPage = () => {
 
