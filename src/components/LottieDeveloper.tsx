@@ -17,8 +17,8 @@ export function LottieDeveloper(props: LottieDeveloperProps) {
   };
 
   return (
-    <div>
+    <>
       <Lottie options={defaultOptions} height={props.size} width={props.size} />
-    </div>
+    </>
   );
 }

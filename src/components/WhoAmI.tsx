@@ -22,7 +22,7 @@ export function WhoAmI() {
     <div
       id="who-am-i"
       className={`
-        h-full w-full 
+        h-[calc(100%-56px)] w-full 
     `}
     >
       Quem sou eu
