@@ -7,7 +7,6 @@ import { useWindowSize } from "../hooks/useWindowSize";
 export function Home() {
   const { width, height } = useWindowSize();
 
-  console.log(width, height);
   const rootAnimation = {
     hidden: { opacity: 0, x: -300 },
     visible: { opacity: 1, x: 0 },
@@ -65,7 +64,9 @@ export function Home() {
       `}
       >
         <div
-          className={`${width! >= 1200 ? "translate-x-20" : "translate-x-10"}`}
+          className={`${
+            width! >= 1200 ? "translate-x-20" : "translate-x-10"
+          } pointer-events-none`}
         >
           <LottieDeveloper
             size={width! <= 1000 ? 400 : width! <= 1200 ? 600 : 700}

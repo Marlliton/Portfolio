@@ -11,9 +11,9 @@ export function LottieDeveloper(props: LottieDeveloperProps) {
     loop: true,
     autoplay: true,
     animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
+    // rendererSettings: {
+    //   preserveAspectRatio: "xMidYMid slice",
+    // },
   };
 
   return (
