@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { ButtonLink } from "./ButtonLink";
-import { TypeWriter } from "./Utils/TypeWriter";
+import { TypeWriter } from "./TypeWriter";
 import { LottieDeveloper } from "./LottieDeveloper";
 import { useWindowSize } from "../hooks/useWindowSize";
+import { ArrowDown } from "./icons/ArrowDown";
 
 export function Home() {
   const { width, height } = useWindowSize();
@@ -16,7 +17,7 @@ export function Home() {
     hover: { scale: 1.025 },
   };
   return (
-    <div className="h-full w-full flex items-center justify-between md:justify-between">
+    <div id="home" className="h-full w-full flex items-center justify-between md:justify-between relative">
       <div className="flex w-full items-center md:items-start flex-col">
         <div>
           <h1 className="text-3xl lg:text-4xl whitespace-nowrap">
@@ -77,6 +78,22 @@ export function Home() {
           />
         </div>
       </motion.div>
+
+      <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className={`
+          absolute top-[88%] left-[50%] text-2xl translate-x-[-50%] 
+          flex whitespace-nowrap pointer-events-none
+        `}
+        >
+          <p>Scroll Down</p>{" "}
+          <ArrowDown
+            className="animate-bounce rounded-full bg-violet-900/30 mt-[3px] ml-3 p-2"
+            size={40}
+          />
+        </motion.span>
+
     </div>
   );
 }

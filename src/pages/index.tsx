@@ -5,34 +5,24 @@ import { Home } from "../components/Home";
 import { WhoAmI } from "../components/WhoAmI";
 import { ArrowDown } from "../components/icons/ArrowDown";
 import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const MainPage: NextPage = () => {
+  function test(ref: any) {
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
   return (
-    <div className="flex items-center flex-col text-gray-200 bg-[#080713] overflow-hidden">
+    <div className="h-screen relative flex items-center flex-col text-gray-200 bg-[#080713] overflow-hidden">
       <Header />
-
-      <div className="w-full h-full py-3 relative">
+      <div className="h-full scroll-smooth scrollbar overflow-y-scroll overflow-x-hidden w-full">
         <Layout>
           <Home />
         </Layout>
 
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className={`
-          absolute top-[40%] left-[50%] text-2xl translate-x-[-50%] 
-          flex whitespace-nowrap pointer-events-none
-        `}
-        >
-          <p>Scroll Down</p>{" "}
-          <ArrowDown
-            className="animate-bounce rounded-full bg-violet-900/30 mt-[3px] ml-3 p-2"
-            size={40}
-          />
-        </motion.span>
-
         <Layout bgClass="bg-[#0a0918]">
-          <WhoAmI />
+          <WhoAmI scroll={test} />
         </Layout>
       </div>
     </div>

@@ -1,13 +1,19 @@
 import { useAnimationControls } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useElementVisible } from "../hooks/useElementVisible";
 
-export function WhoAmI() {
+interface WhoAmIProps {
+  scroll: (ref: any) => void;
+}
+
+export function WhoAmI(props: WhoAmIProps) {
   const inView = useElementVisible({ elementId: "who-am-i" });
   const controls = useAnimationControls();
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (inView) {
+      console.log("visivel");
       controls.start({
         x: 0,
         transition: {},
@@ -20,12 +26,13 @@ export function WhoAmI() {
   }, [inView]);
   return (
     <div
+      ref={ref}
       id="who-am-i"
       className={`
-        h-[calc(100%-56px)] w-full 
+        h-full w-full 
     `}
     >
-      Quem sou eu
+      <p>Quem sou eu</p>
     </div>
   );
 }

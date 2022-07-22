@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { links } from "../links";
 
 interface HeaderProps {
   setBlur: boolean;
@@ -18,36 +19,27 @@ export function Header() {
     hidden: { opacity: 0, x: 100 },
   };
 
-  const showItems = (mobile = false) => {
+  const renderLinks = (mobile = false) => {
     return (
       <>
-        <motion.li
-          variants={item}
-          transition={{ duration: 1 }}
-          className={`
-                hover:bg-violet-900/20 py-2 px-4 rounded-lg cursor-pointer transition-colors ${mobile && 'text-2xl mb-4'}
+        {links.map((link, i) => {
+          return (
+            <motion.li
+              key={i}
+              variants={item}
+              transition={{ duration: 1 }}
+              className={`
+                hover:bg-violet-900/20  rounded-lg cursor-pointer transition-colors ${
+                  mobile && "text-2xl mb-4"
+                }
               `}
-        >
-          Quem sou eu
-        </motion.li>
-        <motion.li
-          variants={item}
-          transition={{ duration: 1 }}
-          className={`
-                hover:bg-violet-900/20 py-2 px-4 rounded-lg cursor-pointer transition-colors ${mobile && 'text-2xl mb-4'}
-              `}
-        >
-          Conhecimentos
-        </motion.li>
-        <motion.li
-          variants={item}
-          transition={{ duration: 1 }}
-          className={`
-                hover:bg-violet-900/20 py-2 px-4 rounded-lg cursor-pointer transition-colors ${mobile && 'text-2xl mb-4'}
-              `}
-        >
-          Projetos
-        </motion.li>
+            >
+              <a href={link.url} className="block w-full h-full py-2 px-4">
+                {link.label}
+              </a>
+            </motion.li>
+          );
+        })}
       </>
     );
   };
@@ -68,14 +60,17 @@ export function Header() {
             animate={{ opacity: [0, 1], x: [-100, 0] }}
             transition={{ duration: 1 }}
             className={`
-              hover:bg-violet-900/20 py-2 px-4 rounded-lg transition-colors hover:scale-75
+              hover:bg-violet-900/20 rounded-lg transition-colors hover:scale-75
             `}
           >
-            &lt;Marlliton Souza&bull;/&gt;
+            <a href="#home" className="block w-full h-full py-2 px-4">
+              &lt;Marlliton Souza&bull;/&gt;
+            </a>
           </motion.h1>
         </div>
 
         <div>
+          {/* TODO refatorar esse menu para um componente */}
           <button
             onClick={() => setShowModal(prevValue => !prevValue)}
             className={`
@@ -111,7 +106,7 @@ export function Header() {
               justify-center items-center z-[8] bg-[#080713]/95
             `}
             >
-              {showItems(true)}
+              {renderLinks(true)}
             </ul>
           )}
           <ul
@@ -119,7 +114,7 @@ export function Header() {
             hidden md:flex gap-3 items-center px-4
           `}
           >
-            {showItems()}
+            {renderLinks()}
           </ul>
         </div>
       </div>
