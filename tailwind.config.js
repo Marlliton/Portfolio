@@ -17,7 +17,7 @@ module.exports = {
             color: "rgb(124 58 237)",
           },
           "100%": {
-            color: "#080713",
+            color: "rgba(0,0,0,0)",
           },
         },
       },

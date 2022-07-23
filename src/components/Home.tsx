@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
-import { ButtonLink } from "./ButtonLink";
-import { TypeWriter } from "./TypeWriter";
-import { LottieDeveloper } from "./LottieDeveloper";
+import { useEffect, useState } from "react";
+import { useElementVisible } from "../hooks/useElementVisible";
 import { useWindowSize } from "../hooks/useWindowSize";
+import { ButtonLink } from "./ButtonLink";
 import { ArrowDown } from "./icons/ArrowDown";
+import { LottieDeveloper } from "./LottieDeveloper";
+import { TypeWriter } from "./TypeWriter";
 
 export function Home() {
-  const { width, height } = useWindowSize();
-
+  const { width } = useWindowSize();
+  const isVisible = useElementVisible({ elementId: "home", threshold: 0.9 });
   const rootAnimation = {
     hidden: { opacity: 0, x: -300 },
     visible: { opacity: 1, x: 0 },
@@ -16,8 +18,12 @@ export function Home() {
   const buttonAnimation = {
     hover: { scale: 1.025 },
   };
+
   return (
-    <div id="home" className="h-full w-full flex items-center justify-between md:justify-between relative">
+    <div
+      id="home"
+      className="h-full w-full flex items-center justify-between md:justify-between relative"
+    >
       <div className="flex w-full items-center md:items-start flex-col">
         <div>
           <h1 className="text-3xl lg:text-4xl whitespace-nowrap">
@@ -79,21 +85,22 @@ export function Home() {
         </div>
       </motion.div>
 
-      <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className={`
+      <motion.a
+        href="#who-am-i"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
+        transition={{duration: 1, type: "spring"}}
+        className={`
           absolute top-[88%] left-[50%] text-2xl translate-x-[-50%] 
-          flex whitespace-nowrap pointer-events-none
+          flex whitespace-nowrap ${!isVisible && 'pointer-events-none'} 
         `}
-        >
-          <p>Scroll Down</p>{" "}
-          <ArrowDown
-            className="animate-bounce rounded-full bg-violet-900/30 mt-[3px] ml-3 p-2"
-            size={40}
-          />
-        </motion.span>
-
+      >
+        <p>Scroll Down</p>{" "}
+        <ArrowDown
+          className="animate-bounce rounded-full bg-violet-900/30 mt-[3px] ml-3 p-2"
+          size={40}
+        />
+      </motion.a>
     </div>
   );
 }

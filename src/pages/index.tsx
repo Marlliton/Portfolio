@@ -21,7 +21,7 @@ const MainPage: NextPage = () => {
           <Home />
         </Layout>
 
-        <Layout bgClass="bg-[#0a0918]">
+        <Layout className="bg-[#0a0918] md:h-[80%]">
           <WhoAmI scroll={test} />
         </Layout>
       </div>

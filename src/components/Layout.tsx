@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 interface LayoutProps {
   children: ReactNode;
-  bgClass?: string;
+  className?: string;
 }
 
 export function Layout(props: LayoutProps) {
@@ -12,7 +12,7 @@ export function Layout(props: LayoutProps) {
     <div
       className={`
       flex items-center h-[calc(100%-56px)] flex-col w-full px-5 gap-4 ${
-        props?.bgClass ?? ""
+        props?.className ?? ""
       }
   `}
     >

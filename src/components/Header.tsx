@@ -28,6 +28,7 @@ export function Header() {
               key={i}
               variants={item}
               transition={{ duration: 1 }}
+              onClick={() => setShowModal(false)}
               className={`
                 hover:bg-violet-900/20  rounded-lg cursor-pointer transition-colors ${
                   mobile && "text-2xl mb-4"
@@ -54,7 +55,7 @@ export function Header() {
        border-b border-violet-900/30 w-full flex justify-center
     `}
     >
-      <div className="flex justify-between h-14 w-full px-4 lg:max-w-7xl items-center">
+      <nav className="flex justify-between h-14 w-full px-4 lg:max-w-7xl items-center">
         <div>
           <motion.h1
             animate={{ opacity: [0, 1], x: [-100, 0] }}
@@ -117,7 +118,7 @@ export function Header() {
             {renderLinks()}
           </ul>
         </div>
-      </div>
+      </nav>
     </motion.div>
   );
 }
