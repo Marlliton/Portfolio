@@ -23,7 +23,7 @@ export function ButtonLink(props: ButtonLinkProps) {
       transition={{ duration: props?.duration ?? 0.2 }}
       whileHover={props?.hover}
     >
-      <a className="block py-3 px-9 md:px-14 h-full w-full" href={props.url} target="_blank">
+      <a className="block py-3 px-9 md:px-14 h-full w-full" href={props.url} target="_blank" rel="noreferrer">
         {props.buttonLabel}
       </a>
     </motion.button>
