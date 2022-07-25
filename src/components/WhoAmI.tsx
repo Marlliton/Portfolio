@@ -4,12 +4,9 @@ import { useEffect } from "react";
 import fotoPerfil from "../../public/assets/perfil.png";
 import { useElementVisible } from "../hooks/useElementVisible";
 import { useWindowSize } from "../hooks/useWindowSize";
+import {Title} from "./Title"
 
-interface WhoAmIProps {
-  scroll: (ref: any) => void;
-}
-
-export function WhoAmI(props: WhoAmIProps) {
+export function WhoAmI() {
   const inView = useElementVisible({ elementId: "who-am-i", threshold: 0.3 });
   const controls = useAnimationControls();
 
@@ -33,14 +30,10 @@ export function WhoAmI(props: WhoAmIProps) {
         h-full w-full flex flex-col text-base items-center justify-center relative 
     `}
     >
-      <h1
-        className={`
-            text-2xl whitespace-nowrap md:text-3xl font-bold text-center absolute 
-            top-[5%] md:top-[10%] right-[50%] translate-x-[50%]
-          `}
-      >
+      
+      <Title>
         Quem sou eu
-      </h1>
+      </Title>
       <motion.div
         animate={controls}
         className={`

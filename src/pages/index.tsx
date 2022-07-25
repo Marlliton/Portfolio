@@ -1,18 +1,11 @@
 import type { NextPage } from "next";
-import { Layout } from "../components/Layout";
 import { Header } from "../components/Header";
 import { Home } from "../components/Home";
+import { Layout } from "../components/Layout";
 import { WhoAmI } from "../components/WhoAmI";
-import { ArrowDown } from "../components/icons/ArrowDown";
-import { motion } from "framer-motion";
-import { useRef } from "react";
+import { Projects } from "../components/Projects";
 
 const MainPage: NextPage = () => {
-  function test(ref: any) {
-    ref.current?.scrollIntoView({
-      behavior: "smooth",
-    });
-  }
   return (
     <div className="h-screen relative flex items-center flex-col text-gray-200 bg-[#080713] overflow-hidden">
       <Header />
@@ -22,7 +15,11 @@ const MainPage: NextPage = () => {
         </Layout>
 
         <Layout className="bg-[#0a0918] md:h-[80%]">
-          <WhoAmI scroll={test} />
+          <WhoAmI />
+        </Layout>
+
+        <Layout className="">
+          <Projects />
         </Layout>
       </div>
     </div>

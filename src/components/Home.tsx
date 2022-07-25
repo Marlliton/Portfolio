@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { useElementVisible } from "../hooks/useElementVisible";
 import { useWindowSize } from "../hooks/useWindowSize";
 import { ButtonLink } from "./ButtonLink";

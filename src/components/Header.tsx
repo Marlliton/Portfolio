@@ -61,7 +61,7 @@ export function Header() {
             animate={{ opacity: [0, 1], x: [-100, 0] }}
             transition={{ duration: 1 }}
             className={`
-              hover:bg-violet-900/20 rounded-lg transition-colors hover:scale-75
+              hover:bg-violet-900/10 rounded-lg transition-colors hover:scale-75
             `}
           >
             <a href="#home" className="block w-full h-full py-2 px-4">
@@ -80,21 +80,21 @@ export function Header() {
           >
             <span
               className={`
-              absolute left-0  w-8 h-[3px] bg-violet-800/90 top-[10px] ${
+              absolute left-0  w-8 h-[3px] bg-violet-900/10 top-[10px] ${
                 showModal && "rotate-45 translate-y-3"
               }
             `}
             ></span>
             <span
               className={`
-              absolute left-0 top-5 w-8 h-[3px] bg-violet-800/90 ${
+              absolute left-0 top-5 w-8 h-[3px] bg-violet-900/10 ${
                 showModal && "hidden"
               }
             `}
             ></span>
             <span
               className={`
-              absolute left-0 w-8 h-[3px] bg-violet-800/90 top-[30px] ${
+              absolute left-0 w-8 h-[3px] bg-violet-900/10 top-[30px] ${
                 showModal && "rotate-[-45deg] translate-y-[-.55rem]"
               }
             `}
