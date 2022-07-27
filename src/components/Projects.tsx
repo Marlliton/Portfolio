@@ -1,6 +1,9 @@
+import { useWindowSize } from "../hooks/useWindowSize";
+import { Link } from "./Link";
 import { Project } from "./Project";
 import { Title } from "./Title";
 export function Projects() {
+  const { width } = useWindowSize();
   const selectedProjects = [
     {
       name: "Conversor de Bases",
@@ -20,13 +23,23 @@ export function Projects() {
         "Aplicativo de tarefas, onde você pode fazer seu login e gerenciar o seu dia.",
       isFinished: false,
     },
+    {
+      name: "Em Breve",
+      description:
+        "Por enquanto é só, mas não se preocupe, teremos muitas novidades chegando em breve.",
+      isFinished: false,
+    },
   ];
 
   function renderProject() {
     return selectedProjects.map(project => {
       return (
-        <li className="md:w-[400px]" key={project.name}>
+        <li
+          className={`${width! <= 855 ? "w-full" : "w-[400px]"}`}
+          key={project.name}
+        >
           <Project
+            repo={project.repo}
             description={project.description}
             isFinished={project.isFinished}
             name={project.name}
@@ -40,13 +53,22 @@ export function Projects() {
   return (
     <div
       className={`
-      w-full h-full relative pt-24
+      w-full h-full relative flex flex-col justify-around items-center
     `}
     >
-      <Title>Projetos</Title>
-      <ul className={`
-        flex h-full gap-4 flex-wrap justify-center items-center
-      `}>{renderProject()}</ul>
+      <h1 className="text-2xl whitespace-nowrap md:text-3xl font-bold ">
+        Projetos
+      </h1>
+      <ul
+        className={`
+           flex gap-4 flex-wrap justify-center items-center content-start
+        `}
+      >
+        {renderProject()}
+      </ul>
+      <Link url="https://github.com/Marlliton" className="text-violet-700 ">
+        Confira também o meu GitHub
+      </Link>
     </div>
   );
 }

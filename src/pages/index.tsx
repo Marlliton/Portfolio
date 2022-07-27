@@ -18,7 +18,7 @@ const MainPage: NextPage = () => {
           <WhoAmI />
         </Layout>
 
-        <Layout className="md:h-[70%]">
+        <Layout className="h-full md:h-[80%]">
           <Projects />
         </Layout>
       </div>
