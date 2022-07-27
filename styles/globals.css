@@ -24,13 +24,4 @@
     background-color: #333333;
     border-radius: 20px;
   }
-
-  /* .perspective: {
-    perspective: 1000px;
-  } */
-
-  .translate-z-100: {
-    /* transform: translateZ(100px); */
-    background-color: "red"
-  }
 }

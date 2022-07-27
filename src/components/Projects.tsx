@@ -1,4 +1,4 @@
-import { Product } from "./Product";
+import { Project } from "./Project";
 import { Title } from "./Title";
 export function Projects() {
   const selectedProjects = [
@@ -25,14 +25,14 @@ export function Projects() {
   function renderProject() {
     return selectedProjects.map(project => {
       return (
-        <Product
-          description={project.description}
-          img={project.img}
-          isFinished={project.isFinished}
-          name={project.name}
-          url={project.url}
-          repo={project.repo}
-        />
+        <li className="md:w-[400px]" key={project.name}>
+          <Project
+            description={project.description}
+            isFinished={project.isFinished}
+            name={project.name}
+            url={project.url}
+          />
+        </li>
       );
     });
   }
@@ -40,13 +40,13 @@ export function Projects() {
   return (
     <div
       className={`
-      w-full h-full flex justify-center  relative
+      w-full h-full relative pt-24
     `}
     >
       <Title>Projetos</Title>
-      <ul className="">
-        <li className="flex gap-4 flex-col md:flex-row lg:w-[90%]">{renderProject()}</li>
-      </ul>
+      <ul className={`
+        flex h-full gap-4 flex-wrap justify-center items-center
+      `}>{renderProject()}</ul>
     </div>
   );
 }

@@ -14,10 +14,6 @@ export function Home() {
     visible: { opacity: 1, x: 0 },
   };
 
-  const buttonAnimation = {
-    hover: { scale: 1.025 },
-  };
-
   return (
     <div
       id="home"
@@ -45,16 +41,16 @@ export function Home() {
           transition={{ duration: 1 }}
         >
           <ButtonLink
-            variants={buttonAnimation}
             hover="hover"
             buttonLabel="LinkedIn"
             url="https://www.linkedin.com/in/marlliton/"
+            className="h-10 w-36 md:h-12 md:w-44"
           />
           <ButtonLink
-            variants={buttonAnimation}
             hover="hover"
             buttonLabel="GitHub"
             url="https://www.github.com/Marlliton/"
+            className="h-10 w-36 md:h-12 md:w-44"
           />
         </motion.div>
       </div>
