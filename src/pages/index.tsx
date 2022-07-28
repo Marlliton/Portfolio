@@ -14,11 +14,11 @@ const MainPage: NextPage = () => {
           <Home />
         </Layout>
 
-        <Layout className="bg-[#0a0918] md:h-[80%]">
+        <Layout className="bg-[#0a0918] h-full md:h-[80%]">
           <WhoAmI />
         </Layout>
 
-        <Layout className="h-full md:h-[80%]">
+        <Layout className="md:h-[70%]">
           <Projects />
         </Layout>
       </div>

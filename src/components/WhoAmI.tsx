@@ -1,28 +1,11 @@
-import { motion, useAnimationControls } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect } from "react";
 import fotoPerfil from "../../public/assets/perfil.png";
-import { useElementVisible } from "../hooks/useElementVisible";
-import { useWindowSize } from "../hooks/useWindowSize";
-import {Title} from "./Title"
+import { Title } from "./Title";
+import { useAnimation } from "../hooks/useAnimation";
 
 export function WhoAmI() {
-  const inView = useElementVisible({ elementId: "who-am-i", threshold: 0.3 });
-  const controls = useAnimationControls();
-
-  useEffect(() => {
-    if (inView) {
-      console.log("visivel");
-      controls.start({
-        x: 0,
-        transition: { type: "spring", bounce: 0.25, mass: 0.8, delay: 0.2 },
-      });
-    } else {
-      controls.start({
-        x: "-100vw",
-      });
-    }
-  }, [inView]);
+  const { controls } = useAnimation({ elementId: "who-am-i", threshold: 0.3 });
   return (
     <div
       id="who-am-i"
@@ -30,11 +13,9 @@ export function WhoAmI() {
         h-full w-full flex flex-col text-base items-center justify-center relative 
     `}
     >
-      
-      <Title>
-        Quem sou eu
-      </Title>
+      <Title>Quem sou eu</Title>
       <motion.div
+        initial={{ opacity: 0 }}
         animate={controls}
         className={`
           flex flex-col md:flex-row

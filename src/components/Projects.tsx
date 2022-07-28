@@ -1,9 +1,13 @@
-import { useWindowSize } from "../hooks/useWindowSize";
 import { Link } from "./Link";
 import { Project } from "./Project";
-import { Title } from "./Title";
+import { motion } from "framer-motion";
+import { useElementVisible } from "../hooks/useElementVisible";
+import { useEffect } from "react";
+import { useAnimation } from "../hooks/useAnimation";
+
 export function Projects() {
-  const { width } = useWindowSize();
+  const { controlsReverse } = useAnimation({ elementId: "projects", threshold: .4 });
+
   const selectedProjects = [
     {
       name: "Conversor de Bases",
@@ -34,10 +38,7 @@ export function Projects() {
   function renderProject() {
     return selectedProjects.map(project => {
       return (
-        <li
-          className={`${width! <= 855 ? "w-full" : "w-[400px]"}`}
-          key={project.name}
-        >
+        <li className="w-full md:w-[375px]" key={project.name}>
           <Project
             repo={project.repo}
             description={project.description}
@@ -52,23 +53,30 @@ export function Projects() {
 
   return (
     <div
+      id="projects"
       className={`
-      w-full h-full relative flex flex-col justify-around items-center
+        flex flex-col py-6 items-center h-full
     `}
     >
-      <h1 className="text-2xl whitespace-nowrap md:text-3xl font-bold ">
-        Projetos
-      </h1>
-      <ul
-        className={`
-           flex gap-4 flex-wrap justify-center items-center content-start
-        `}
+      <h1 className="text-2xl whitespace-nowrap md:text-3xl pb-6 lg:pt-10">Projetos</h1>
+      <motion.div
+        animate={controlsReverse}
+        className="flex flex-1 flex-col items-center justify-center pb-6"
       >
-        {renderProject()}
-      </ul>
-      <Link url="https://github.com/Marlliton" className="text-violet-700 ">
-        Confira também o meu GitHub
-      </Link>
+        <ul
+          className={`
+            w-full flex justify-center gap-4 flex-wrap
+          `}
+        >
+          {renderProject()}
+        </ul>
+        <Link
+          url="https://github.com/Marlliton"
+          className="text-violet-700 pt-6"
+        >
+          Confira também o meu GitHub
+        </Link>
+      </motion.div>
     </div>
   );
 }

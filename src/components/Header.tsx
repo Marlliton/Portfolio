@@ -80,21 +80,21 @@ export function Header() {
           >
             <span
               className={`
-              absolute left-0  w-8 h-[3px] bg-violet-900/10 top-[10px] ${
+              absolute left-0  w-8 h-[3px] bg-violet-700 top-[10px] ${
                 showModal && "rotate-45 translate-y-3"
               }
             `}
             ></span>
             <span
               className={`
-              absolute left-0 top-5 w-8 h-[3px] bg-violet-900/10 ${
+              absolute left-0 top-5 w-8 h-[3px] bg-violet-700 ${
                 showModal && "hidden"
               }
             `}
             ></span>
             <span
               className={`
-              absolute left-0 w-8 h-[3px] bg-violet-900/10 top-[30px] ${
+              absolute left-0 w-8 h-[3px] bg-violet-700 top-[30px] ${
                 showModal && "rotate-[-45deg] translate-y-[-.55rem]"
               }
             `}
