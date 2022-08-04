@@ -6,7 +6,7 @@
 
 @layer base {
   html {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 }
 
@@ -23,5 +23,9 @@
   .scrollbar::-webkit-scrollbar-thumb {
     background-color: #333333;
     border-radius: 20px;
+  }
+
+  .my-gradient {
+    background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css")
   }
 }

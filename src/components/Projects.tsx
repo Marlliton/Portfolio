@@ -58,7 +58,7 @@ export function Projects() {
         flex flex-col py-6 items-center h-full
     `}
     >
-      <h1 className="text-2xl whitespace-nowrap md:text-3xl pb-6 lg:pt-10">Projetos</h1>
+      <h1 className="text-2xl font-bold whitespace-nowrap md:text-3xl pb-6 lg:pt-10">Projetos</h1>
       <motion.div
         animate={controlsReverse}
         className="flex flex-1 flex-col items-center justify-center pb-6"
