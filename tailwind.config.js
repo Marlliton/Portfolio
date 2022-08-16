@@ -10,6 +10,14 @@ module.exports = {
     },
   ],
   theme: {
+    colors: {
+      "dark": "#050F2B",
+      "blue-dark": "#153477",
+      "blue": "#00529C",
+      "pastel-blue": "#516EBC",
+      "pastel-blue-light": "#9BAEE1",
+      "white": "#C1CDDC",
+    },
     extend: {
       keyframes: {
         "fade-in-down": {

@@ -26,6 +26,25 @@
   }
 
   .my-gradient {
-    background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css")
+    background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css");
+  }
+
+  .menu-before {
+    top: 17px;
+    width: 36px;
+    transform: rotate(45deg);
+
+  }
+  
+  .menu-after {
+    bottom: 20px;
+    width: 36px;
+    transform: rotate(-45deg);
+  }
+  
+  .menu {
+    /* transform: rotate(-45deg); */
+    width: 0;
+    height: 0;
   }
 }
