@@ -11,7 +11,7 @@ export function Layout(props: LayoutProps) {
   return (
     <div
       className={`
-      flex items-center flex-col w-full px-5 gap-4 h-screen bg-dark text-white pt-20 ${
+      flex items-center flex-col w-full px-5 gap-4 bg-dark text-white pt-20 scrollbar ${
         props?.className ?? ""
       }
   `}

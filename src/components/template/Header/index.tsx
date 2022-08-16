@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useElementVisible } from "../../../hooks/useElementVisible";
 import { Link } from "../../basicComponents/Link";
 import { Logo } from "../Logo";
 import { Menu } from "../Menu";
 
 export function Header() {
   const [showModal, setShowModal] = useState<true | false>(false);
+  const [showHeader, setShowHeader] = useState<true | false>(true);
   const navLinks = [
     {
       label: "Quem sou eu",
@@ -34,11 +36,25 @@ export function Header() {
     setShowModal(prev => !prev);
   };
 
+  useEffect(() => {
+    let prevScroll = window.pageYOffset;
+    window.onscroll = function () {
+      let currentScroll = window.pageYOffset;
+      if (prevScroll < currentScroll) {
+        setShowHeader(false);
+      } else {
+        setShowHeader(true);
+      }
+      prevScroll = currentScroll;
+    };
+  });
+
   return (
     <div
       className={`
       flex w-full h-20 fixed top-0 justify-center items-center px-5
-      text-white
+      text-white transition-all duration-300 shadow-2xl bg-dark/95
+      ${showHeader ? "top-0" : "top-[-80px]"}
   `}
     >
       <div className="flex justify-between w-full lg:max-w-7xl">

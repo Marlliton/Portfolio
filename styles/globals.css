@@ -8,42 +8,39 @@
   html {
     font-family: "Poppins", sans-serif;
   }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #050F2B;
+    border-radius: 10px;
+    background: #9BAEE1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #153477;
+    border-radius: 10px;
+  }
 }
 
 @layer utilities {
-  .scrollbar::-webkit-scrollbar {
-    width: 4px;
-    padding: 10px;
-  }
-
-  .scrollbar::-webkit-scrollbar-track {
-    background: #1c1b24;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    background-color: #333333;
-    border-radius: 20px;
-  }
-
-  .my-gradient {
-    background-image: url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css");
-  }
-
   .menu-before {
     top: 17px;
     width: 36px;
     transform: rotate(45deg);
-
   }
-  
+
   .menu-after {
     bottom: 20px;
     width: 36px;
     transform: rotate(-45deg);
   }
-  
+
   .menu {
-    /* transform: rotate(-45deg); */
     width: 0;
     height: 0;
   }
