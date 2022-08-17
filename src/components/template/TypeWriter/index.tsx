@@ -34,7 +34,7 @@ export function TypeWriter(props: TypeWriterProps) {
     <>
       {text}{" "}
       {showCursor && (
-        <span className="animate-fade-in-down text-2xl md:text-4xl ml-1 font-medium">
+        <span className="animate-fade-in-down text-2xl md:text-4xl ml-[-10px] font-medium">
           |
         </span>
       )}

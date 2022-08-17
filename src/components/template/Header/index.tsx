@@ -23,9 +23,19 @@ export function Header() {
   ];
 
   const renderNavLinks = () => {
+    const delay = {
+      0: "delay-75",
+      1: "delay-150",
+      2: "delay-300",
+    };
     return navLinks.map((link, i) => {
       return (
-        <Link key={i} url={link.url} onlyText>
+        <Link
+          className={`${(delay as any)[i]} animate-show-off-down`}
+          key={i}
+          url={link.url}
+          onlyText
+        >
           {link.label}
         </Link>
       );
@@ -53,7 +63,7 @@ export function Header() {
     <div
       className={`
       flex w-full h-20 fixed top-0 justify-center items-center px-5
-      text-white transition-all duration-300 shadow-2xl bg-dark/95
+      text-white transition-all duration-300 shadow-xl bg-dark
       ${showHeader ? "top-0" : "top-[-80px]"}
   `}
     >
