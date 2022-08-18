@@ -10,7 +10,7 @@ export function Header() {
   const navLinks = [
     {
       label: "Quem sou eu",
-      url: "#who-am-i",
+      url: "#about",
     },
     {
       label: "Projetos",
@@ -18,15 +18,15 @@ export function Header() {
     },
     {
       label: "Conhecimentos",
-      url: "#knowledge",
+      url: "#skills",
     },
   ];
 
   const renderNavLinks = () => {
     const delay = {
-      0: "delay-75",
-      1: "delay-150",
-      2: "delay-300",
+      0: "animation-delay-75",
+      1: "animation-delay-150",
+      2: "animation-delay-300",
     };
     return navLinks.map((link, i) => {
       return (

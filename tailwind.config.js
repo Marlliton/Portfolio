@@ -22,17 +22,17 @@ module.exports = {
       keyframes: {
         "fade-in-down": {
           "0%": {
-            color: "#9BAEE1",
+            opacity: 1,
           },
           "100%": {
-            color: "rgba(0,0,0,0)",
+            opacity: 0,
           },
         },
 
         "fade-in": {
           "0%": {
             opacity: 0,
-            transform: "translateY(-30px)",
+            transform: "translateY(-100vh)",
           },
           "100%": {
             opacity: 1,
@@ -78,9 +78,9 @@ module.exports = {
         "fade-in": "fade-in .8s",
         "lateral-fade-in": "lateral-fade-in .8s",
         "show-off-up": "show-off-up .8s",
-        "show-off-down": "show-off-down .8s",
+        "show-off-down": "show-off-down .8s backwards",
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animation-delay")],
 };

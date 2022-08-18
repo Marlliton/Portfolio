@@ -10,7 +10,7 @@ interface LinkProps {
 
 export function Link(props: LinkProps) {
   return (
-    <span className={`block transition relative max-w-max ${props?.className}`}>
+    <span className={`transition relative max-w-max ${props?.className}`}>
       {props.onlyText ? (
         <a
           rel={props.external ? "noreferrer" : ""}

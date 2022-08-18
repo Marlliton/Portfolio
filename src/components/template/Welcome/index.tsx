@@ -1,40 +1,42 @@
-import { Title } from "../../basicComponents/title";
+import { Link } from "../../basicComponents/Link";
+import { Title } from "../../basicComponents/Title";
+import { ArrowDown } from "../../icons/ArrowDown";
 import { TypeWriter } from "../TypeWriter";
+import { Introduction } from "./Introduction";
 
 export function Welcome() {
   return (
     <div
       className={`
-       flex justify-center h-screen
+       flex flex-col justify-center h-[calc(100vh-80px)] items-center relative
     `}
     >
-      <div className="w-full md:max-w-[60%] text-left">
-        <Title heading="h1" align="left" className={`animate-fade-in mb-4`}>
+      <div className="w-full md:max-w-[80%]  text-left">
+        <Title heading="h1" align="left" className={`animate-fade-in  md:mb-4`}>
           Bem Vindo!
         </Title>
-        <div>
-          <span
-            className={`
-            text-pastel-blue-light block text-lg animate-lateral-fade-in
-          `}
-          >
-            Oi, meu nome é
-          </span>
-          <span className="block h-[100px]">
-            <Title heading="h1" align="left">
-              <TypeWriter text="Marlliton Souza." hideCursor />
-            </Title>
-            <Title heading="h1" align="left" className="text-pastel-blue-light">
-              <TypeWriter text="Eu construo coisas para a web." delay={2500} />
-            </Title>
-          </span>
-          <div className={`animate-show-off-up transition-all delay-1000`}>
-            Sou desenvolvedor frontend, estudante de Análise e Desenvolvimento
-            de Sistemas. Gosto muito de animais e curto games nas horas vagas.
-            Como todo programador, adoro um bom café para me acompanhar nas
-            madrugadas nas madrugadas ☕💻
-          </div>
+        <Introduction />
+        <div
+          className={`
+          flex justify-center text-pastel-blue-light pt-7 animate-show-off-up
+        `}
+        >
+          <Link url="https://github.com/Marlliton" external onlyText>
+            Visite meu GitHub
+          </Link>
         </div>
+      </div>
+
+      <div className="absolute top-[88%] animate-show-off-up">
+        <Link url="#about">
+          <div className="flex">
+            <p className="text-2xl">Scroll Down</p>{" "}
+            <ArrowDown
+              className="animate-bounce rounded-full bg-pastel-blue mt-[3px] ml-3 p-2 translate-y-[-50px]"
+              size={40}
+            />
+          </div>
+        </Link>
       </div>
     </div>
   );
