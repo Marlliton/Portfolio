@@ -7,6 +7,7 @@
 @layer base {
   html {
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
   }
 
   ::-webkit-scrollbar {
@@ -15,9 +16,9 @@
 
   /* Track */
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #050F2B;
+    box-shadow: inset 0 0 5px #050f2b;
     border-radius: 10px;
-    background: #9BAEE1;
+    background: #9baee1;
   }
 
   /* Handle */

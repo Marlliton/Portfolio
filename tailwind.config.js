@@ -20,7 +20,7 @@ module.exports = {
     },
     extend: {
       keyframes: {
-        "fade-in-down": {
+        "cursor-effect": {
           "0%": {
             opacity: 1,
           },
@@ -29,7 +29,7 @@ module.exports = {
           },
         },
 
-        "fade-in": {
+        "fade-in-y": {
           "0%": {
             opacity: 0,
             transform: "translateY(-100vh)",
@@ -40,7 +40,7 @@ module.exports = {
           },
         },
 
-        "lateral-fade-in": {
+        "fade-in-l-x": {
           "0%": {
             opacity: 0,
             transform: "translateX(-100vw)",
@@ -51,10 +51,10 @@ module.exports = {
           },
         },
 
-        "show-off-up": {
+        "fade-in-r-x": {
           "0%": {
             opacity: 0,
-            transform: "translateY(10px)",
+            transform: "translateX(100vw)",
           },
           "100%": {
             opacity: 1,
@@ -62,23 +62,61 @@ module.exports = {
           },
         },
 
-        "show-off-down": {
+        "fade-in-r-x-reverse": {
+          "0%": {
+            opacity: 1,
+            transform: "translateX(0px)",
+            display: "block",
+          },
+          "100%": {
+            opacity: 0,
+            transform: "translateX(100vw)",
+            display: "none",
+          },
+        },
+
+        "fade-in-l-x-reverse": {
+          "0%": {
+            opacity: 1,
+            transform: "translateX(0px)",
+          },
+          "100%": {
+            opacity: 0,
+            transform: "translateX(-100vw)",
+          },
+        },
+
+        "show-up": {
+          "0%": {
+            opacity: 0,
+            transform: "translateY(100vh)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translateY(0px)",
+          },
+        },
+
+        "show-down": {
           "0%": {
             opacity: 0,
             transform: "translateY(-100vh)",
           },
           "100%": {
             opacity: 1,
-            transform: "translateX(0px)",
+            transform: "translateY(0px)",
           },
         },
       },
       animation: {
-        "fade-in-down": "fade-in-down .8s infinite",
-        "fade-in": "fade-in .8s",
-        "lateral-fade-in": "lateral-fade-in .8s",
-        "show-off-up": "show-off-up .8s",
-        "show-off-down": "show-off-down .8s backwards",
+        "cursor-effect": "cursor-effect .8s infinite",
+        "fade-in-y": "fade-in-y .8s",
+        "fade-in-l-x": "fade-in-l-x .8s forwards",
+        "fade-in-r-x": "fade-in-r-x .8s forwards",
+        "fade-in-l-x-reverse": "fade-in-l-x-reverse .8s backwards",
+        "fade-in-r-x-reverse": "fade-in-r-x-reverse .8s forwards",
+        "show-up": "show-up .8s backwards",
+        "show-down": "show-down .8s backwards",
       },
     },
   },

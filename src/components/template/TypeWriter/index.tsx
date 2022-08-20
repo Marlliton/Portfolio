@@ -34,7 +34,7 @@ export function TypeWriter(props: TypeWriterProps) {
     <>
       {text}
       {showCursor && (
-        <span className="inline-block bg-pastel-blue-light ml-1 animate-fade-in-down text-3xl w-[2px] h-9" />
+        <span className="inline-block bg-pastel-blue-light ml-1 animate-cursor-effect text-3xl w-[2px] h-7 md:h-9" />
       )}
     </>
   );

@@ -14,7 +14,8 @@ export function Image(props: ImageProps) {
   return (
     <div
       className={`
-        ${props?.className} ${props?.size && size}
+      overflow-hidden  
+      ${props?.className} ${props?.size && size} 
     `}
     >
       <NextImage

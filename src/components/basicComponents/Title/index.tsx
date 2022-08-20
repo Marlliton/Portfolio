@@ -5,22 +5,28 @@ interface TileProps {
   children: any;
   className?: string;
   align?: "center" | "left" | "right";
+  insetLine?: boolean;
 }
 
 export function Title(props: TileProps) {
   const { width } = useWindowSize();
-
-  //   sm	640px	@media (min-width: 640px) { ... }
-  // md	768px	@media (min-width: 768px) { ... }
-  // lg	1024px	@media (min-width: 1024px) { ... }
-  // xl	1280px	@media (min-width: 1280px) { ... }
-  // 2xl	1536px
 
   const fontSize = {
     h1: width! <= 640 ? "text-3xl" : width! <= 768 ? "text-4xl" : "text-5xl",
     h2: width! <= 640 ? "text-2xl" : width! <= 768 ? "text-3xl" : "text-3xl",
     h3: width! <= 640 ? "text-2xl" : width! <= 768 ? "text-2xl" : "text-3xl",
   };
+
+  const renderLine = () => {
+    return (
+      <span
+        className={`
+        h-[1px] w-[60%] mr-5 bg-pastel-blue-light/20
+      `}
+      />
+    );
+  };
+
   return (
     <div
       className={`
@@ -31,10 +37,14 @@ export function Title(props: TileProps) {
            ? "justify-start"
            : "justify-center"
        }
+       items-center
     `}
     >
+      {props?.insetLine && renderLine()}
       <props.heading
-        className={`relative font-bold ${fontSize[props?.heading]} ${props?.className}`}
+        className={`relative font-bold  ${fontSize[props?.heading]} ${
+          props?.className
+        }`}
       >
         {props.children}
       </props.heading>
