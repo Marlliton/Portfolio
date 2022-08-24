@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     colors: {
       dark: "#050F2B",
+      "dark-light": "#18213C",
       "blue-dark": "#153477",
       blue: "#00529C",
       "pastel-blue": "#516EBC",
@@ -51,6 +52,17 @@ module.exports = {
           },
         },
 
+        "fade-in-l-x-reverse": {
+          "0%": {
+            opacity: 1,
+            transform: "translateX(0px)",
+          },
+          "100%": {
+            opacity: 0,
+            transform: "translateX(-100vw)",
+          },
+        },
+
         "fade-in-r-x": {
           "0%": {
             opacity: 0,
@@ -66,23 +78,12 @@ module.exports = {
           "0%": {
             opacity: 1,
             transform: "translateX(0px)",
-            display: "block",
+            // display: "block",
           },
           "100%": {
             opacity: 0,
             transform: "translateX(100vw)",
-            display: "none",
-          },
-        },
-
-        "fade-in-l-x-reverse": {
-          "0%": {
-            opacity: 1,
-            transform: "translateX(0px)",
-          },
-          "100%": {
-            opacity: 0,
-            transform: "translateX(-100vw)",
+            // display: "none",
           },
         },
 

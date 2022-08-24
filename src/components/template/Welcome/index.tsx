@@ -7,7 +7,7 @@ import { Introduction } from "./Introduction";
 export function Welcome() {
    const isVisible =  useElementVisible({
     elementId: "welcome",
-    threshold: 1,
+    threshold: .9,
   });
 
   return (
@@ -18,7 +18,7 @@ export function Welcome() {
     `}
     >
       <div className="w-full text-left">
-        <Title heading="h1" align="left" className={`animate-fade-in-y  md:mb-4`}>
+        <Title heading="h1" textStyle={`animate-fade-in-y  md:mb-4`}>
           Bem Vindo!
         </Title>
         <Introduction />

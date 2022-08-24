@@ -4,8 +4,9 @@ interface TileProps {
   heading: "h1" | "h2" | "h3";
   children: any;
   className?: string;
-  align?: "center" | "left" | "right";
+  textStyle?: string;
   insetLine?: boolean;
+  reverse?: boolean;
 }
 
 export function Title(props: TileProps) {
@@ -21,7 +22,7 @@ export function Title(props: TileProps) {
     return (
       <span
         className={`
-        h-[1px] w-[60%] mr-5 bg-pastel-blue-light/20
+        flex flex-1 h-[1px] mx-5 bg-pastel-blue-light/20
       `}
       />
     );
@@ -30,20 +31,16 @@ export function Title(props: TileProps) {
   return (
     <div
       className={`
-       flex ${
-         props.align === "right"
-           ? "justify-end"
-           : props.align === "left"
-           ? "justify-start"
-           : "justify-center"
-       }
-       items-center
+      flex
+      items-center 
+      ${props?.reverse ? "flex-row-reverse" : ""}
+      ${props?.className ? props.className : ""}
     `}
     >
       {props?.insetLine && renderLine()}
       <props.heading
         className={`relative font-bold  ${fontSize[props?.heading]} ${
-          props?.className
+          props?.textStyle
         }`}
       >
         {props.children}
