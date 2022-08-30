@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useElementVisible } from "../../../hooks/useElementVisible";
 import { Image } from "../../basicComponents/Image";
 import { Paragraph } from "../../basicComponents/Paragraph";
@@ -22,8 +22,9 @@ export function About() {
         <div
           className={`
           flex flex-col-reverse items-center gap-9 md:flex-row md:justify-center pt-4 md:pt-10
-        `}
+          `}
         >
+          
           <div className="flex-1">
             <Paragraph>
               Olá, me chamo Marlliton e meu interesse por programação começou em
