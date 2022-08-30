@@ -29,7 +29,7 @@ export function About() {
             <Paragraph>
               Olá, me chamo Marlliton e meu interesse por programação começou em
               2019, quando eu fui apresentado a um pequeno script em python 🐍,
-              este somente imprimia um "hello world" no console. E desse pequeno
+              este somente imprimia um &#34;hello world&#34; no console. E desse pequeno
               script nasceu uma paixão. Comecei a estudar programação, entrei em
               uma faculdade e estou me formando em Análise e Desenvolvimento de
               Sistemas.
