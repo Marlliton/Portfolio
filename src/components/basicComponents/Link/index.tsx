@@ -14,7 +14,7 @@ export function Link(props: LinkProps) {
   return (
     <span
       onClick={() => props.onClick?.()}
-      className={`transition relative block max-w-max ${
+      className={`transition relative block max-w-max ${!props?.url && "hover:cursor-not-allowed brightness-50"} ${
         props?.className && props.className
       }`}
     >

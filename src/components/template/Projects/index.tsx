@@ -3,8 +3,14 @@ import { Title } from "../../basicComponents/Title";
 import { ProjectContent } from "./ProjectContent";
 import todo from "/public/assets/todo.png";
 import base from "/public/assets/base.png";
+import { ProductionTag } from "./ProductionTag";
+import { useElementVisible } from "../../../hooks/useElementVisible";
 
 export function Projects() {
+  const isVisible = useElementVisible({
+    elementId: "projects",
+    threshold: 0.4,
+  });
   const selectedProjects = [
     {
       name: "Conversor de Bases",
@@ -38,11 +44,14 @@ export function Projects() {
     return selectedProjects.map(project => {
       return (
         <li
+          className={`flex-1 bg-dark-light min-w-[400px] rounded-lg relative overflow-hidden opacity-0 ${
+            isVisible
+              ? "animate-fade-in-l-x opacity-100"
+              : "animate-fade-in-l-x-reverse"
+          }`}
           key={project.name}
-          className={`
-        flex
-      `}
         >
+          {!project.isFinished && <ProductionTag />}
           <ProjectContent
             technologies={project.technologies}
             githubProjectLink={project.repo ?? undefined}
@@ -71,7 +80,7 @@ export function Projects() {
         Coisas que construí
       </Title>
       <div className="w-full pt-14">
-        <ul className="flex justify-center gap-8 flex-wrap">
+        <ul className="flex justify-center gap-2 flex-wrap">
           {renderProjects()}
         </ul>
       </div>

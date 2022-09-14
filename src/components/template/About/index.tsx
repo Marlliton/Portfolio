@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useElementVisible } from "../../../hooks/useElementVisible";
 import { Image } from "../../basicComponents/Image";
 import { Paragraph } from "../../basicComponents/Paragraph";
@@ -6,7 +5,6 @@ import { Title } from "../../basicComponents/Title";
 import img from "/public/assets/perfil-blue-light.png";
 
 export function About() {
-  const [hasAnimate, setHasAnimate] = useState<boolean>(false);
   const isVisible = useElementVisible({ elementId: "about", threshold: 0.4 });
 
   return (

@@ -18,51 +18,48 @@ interface ProjectContentProps {
 export function ProjectContent(props: ProjectContentProps) {
   function renderTechnologies() {
     return props.technologies?.map(tec => (
-      <Paragraph key={tec} className="italic text-xs">{tec}</Paragraph>
+      <Paragraph key={tec} className="italic text-xs">
+        {tec}
+      </Paragraph>
     ));
   }
 
   return (
-    <div className="max-w-sm bg-dark-light rounded-lg shadow-md">
-      <ProjectImage src={props.img} />
-
-      <div className="m-2 flex flex-1">
-        <div className="flex flex-col flex-1">
-          <Paragraph className="mb-3 text-base">Projeto em destaque</Paragraph>
-          <Title heading="h3" textStyle="text-base" className="mb-3">
-            {props.name}
-          </Title>
-          {props.children ?? false}
-          <div className="flex gap-4">
-            {props.technologies && renderTechnologies()}
+    <div className="flex flex-col items-center pb-5">
+      <ProjectImage alt={props.name!} src={props.img} />
+      <div
+        className={`
+        flex flex-col w-[min(500px,100%)] px-5
+      `}
+      >
+        <header>
+          <Paragraph className="text-white/70 mb-0 text-base">
+            Projeto em Destaque
+          </Paragraph>
+          <Title heading="h3">{props.name}</Title>
+        </header>
+        <main className="flex flex-col">{props.children}</main>
+        <footer className="flex justify-end">
+          <span className="flex gap-5 flex-1">
+            {props?.technologies && renderTechnologies()}
+          </span>
+          <div className="flex gap-3">
+            <Link
+              external
+              className="scale-125 hover:scale-150 text-pastel-blue"
+              url={props.githubProjectLink!}
+            >
+              <GithubLogo />
+            </Link>
+            <Link
+              external
+              className="scale-125 hover:scale-150 text-pastel-blue"
+              url={props.productionLink!}
+            >
+              <ArrowSquareIn />
+            </Link>
           </div>
-        </div>
-
-        <div className="flex flex-col justify-end gap-3 pl-3 rounded-lg">
-          <Link
-            url={props.githubProjectLink ?? "#"}
-            external
-            className={`${
-              !props.githubProjectLink
-                ? "text-pastel-blue/30 hover:scale-100 pointer-events-none"
-                : "text-pastel-blue hover:scale-110"
-            }`}
-          >
-            <GithubLogo weight="regular" size={30} />
-          </Link>
-
-          <Link
-            className={`${
-              !props.productionLink
-                ? "text-pastel-blue/30 hover:scale-100 pointer-events-none"
-                : "text-pastel-blue hover:scale-110"
-            }`}
-            url={props.productionLink ?? "#"}
-            external
-          >
-            <ArrowSquareIn weight="regular" size={30} />
-          </Link>
-        </div>
+        </footer>
       </div>
     </div>
   );

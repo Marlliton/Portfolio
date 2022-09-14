@@ -7,7 +7,7 @@ export function Modal(props: ModalProps) {
   return (
     <div className="bg-dark md:hidden">
       <div
-        className={`absolute w-[20rem]  top-20 h-screen -z-10 backdrop-blur-3xl ${
+        className={`absolute w-[20rem]  top-20 h-screen z-10 backdrop-blur-3xl ${
           props.showModal ? "animate-fade-in-r-x right-0" : "animate-fade-in-r-x-reverse"
         }`}
       >

@@ -72,7 +72,7 @@ export function Header() {
     <div
       className={`
       flex w-full h-20 fixed top-0 justify-center items-center px-5
-      text-white transition-all duration-300 shadow-xl z-[1] 
+      text-white transition-all duration-300 shadow-xl z-40 
       backdrop-blur-3xl md:backdrop-blur-[5px]
       ${showHeader ? "top-0" : "top-[-80px]"}
   `}
