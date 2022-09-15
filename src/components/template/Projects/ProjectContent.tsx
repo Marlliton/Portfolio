@@ -1,10 +1,8 @@
-import { GithubLogo, ArrowSquareIn } from "phosphor-react";
-import { Button } from "../../basicComponents/Button";
+import { ArrowSquareIn, GithubLogo } from "phosphor-react";
 import { Link } from "../../basicComponents/Link";
 import { Paragraph } from "../../basicComponents/Paragraph";
 import { Title } from "../../basicComponents/Title";
 import { ProjectImage } from "./ProjectImage";
-import todo from "/public/assets/to-do.png";
 
 interface ProjectContentProps {
   technologies?: string[];
@@ -26,7 +24,7 @@ export function ProjectContent(props: ProjectContentProps) {
 
   return (
     <div className="flex flex-col items-center pb-5">
-      <ProjectImage alt={props.name!} src={props.img} />
+      <ProjectImage alt={props.name!} src={props.img} className={`${props.name === "Em Breve" && "w-[250px]"}`} />
       <div
         className={`
         flex flex-col w-[min(500px,100%)] px-5
@@ -36,7 +34,7 @@ export function ProjectContent(props: ProjectContentProps) {
           <Paragraph className="text-white/70 mb-0 text-base">
             Projeto em Destaque
           </Paragraph>
-          <Title heading="h3">{props.name}</Title>
+          <Title heading="h3" textStyle="text-base">{props.name}</Title>
         </header>
         <main className="flex flex-col">{props.children}</main>
         <footer className="flex justify-end">
