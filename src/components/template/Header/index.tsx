@@ -20,8 +20,8 @@ export function Header() {
       url: "#projects",
     },
     {
-      label: "Conhecimentos",
-      url: "#skills",
+      label: "Conecte-se",
+      url: "#connect",
     },
   ];
 
