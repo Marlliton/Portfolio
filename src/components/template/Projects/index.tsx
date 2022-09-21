@@ -5,6 +5,7 @@ import { selectedProjects } from "./projects";
 
 import { ProductionTag } from "./ProductionTag";
 import { useElementVisible } from "../../../hooks/useElementVisible";
+import { Link } from "../../basicComponents/Link";
 
 export function Projects() {
   const isVisible = useElementVisible({
@@ -56,6 +57,11 @@ export function Projects() {
           {renderProjects()}
         </ul>
       </div>
+      <span className="flex justify-center py-5">
+        <Link onlyText external className="text-pastel-blue-light" url="https://github.com/Marlliton">
+          Visite meu GitHub para ver mais projetos
+        </Link>
+      </span>
     </div>
   );
 }

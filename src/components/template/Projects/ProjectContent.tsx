@@ -38,7 +38,7 @@ export function ProjectContent(props: ProjectContentProps) {
         </header>
         <main className="flex flex-col">{props.children}</main>
         <footer className="flex justify-end">
-          <span className="flex gap-1 md:gap-5 flex-1">
+          <span className="flex gap-1 md:gap-3 flex-1">
             {props?.technologies && renderTechnologies()}
           </span>
           <div className="flex gap-3">
